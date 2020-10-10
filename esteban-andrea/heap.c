@@ -34,11 +34,12 @@ int removeMax(THeap *h){
 } 
 
 int getMax(THeap *h){ 
-  int k = h->size;
+  if (h->size == 0){
+    printf("Heap vacío.\n");
+    return 0;
+  }
   int max = 0;
-  while (k>=1){
-    k = k/3;
-    max = h->data[k];
+    max = h->data[1];
   }
   return max;
 } 
