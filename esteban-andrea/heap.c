@@ -52,9 +52,12 @@ void topDownHeapify(int * arr, int k, int n){
   return;
 } 
 
-THeap * THeap_new(void){
+THeap * THeap_new(int capacity){
   // Alocacion de memoria
   THeap *heap = (THeap *) calloc (1,sizeof(THeap));
+  heap->capacity = capacity;
+  heap->data = (int *) calloc (capacity, sizeof(int ));
+
   return heap;
 }
 
