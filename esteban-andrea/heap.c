@@ -43,13 +43,19 @@ void bottomUpHeapify(int *arr, int k){
 
 void topDownHeapify(int * arr, int k, int n){ 
   while (3*k <= n){
-    int j = 3*k;
-    if (j < n && arr[j] < arr[j+1]) j++;
+    int j = 3*k;                              // Busco primer hijo
+    if (j < n && arr[j] < arr[j+1]) {         // Si arr[j] < arr[j+1] ...
+      j++;
+      if (j < n && arr[j] < arr[j+1]) j++;    // Si arr[j] < arr[j+1] < arr[j+2]
+    }
+    else{                                     // arr[j] > arr[j+1]
+      if (j+1 < n && arr[j] < arr[j+2] j += 2;// arr[j] > arr[j+1] y arr[j] < arr[j+2]
+    }                               
+    // Si no se cumple lo anterior, hijo maximo esta en primer hijo
     if (arr[k]>= arr[j]) break;
     swap(arr, k, j);
     k = j;
   }
-  return;
 } 
 
 THeap * THeap_new(int capacity){
@@ -57,7 +63,6 @@ THeap * THeap_new(int capacity){
   THeap *heap = (THeap *) calloc (1,sizeof(THeap));
   heap->capacity = capacity;
   heap->data = (int *) calloc (capacity, sizeof(int ));
-
   return heap;
 }
 
