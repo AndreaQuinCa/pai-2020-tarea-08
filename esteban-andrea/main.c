@@ -8,6 +8,8 @@
 
 //prueba
 int main(int num_args, char ** args){
-  // TODO
+  THeap *heap_esteban;
+  heap_esteban = THeap_new(10);
+  printf("Capacity: %i\nSize: %i\n", heap_esteban->capacity, heap_esteban->size);
   return 0;
 }

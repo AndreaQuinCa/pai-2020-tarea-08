@@ -1,6 +1,7 @@
 #ifndef HEAP_T08
 #define HEAP_T08
-
+#include <stdio.h>
+#include <stdlib.h>
 // Prototipos =================================================================
 
 typedef struct _THeap{
@@ -9,8 +10,8 @@ typedef struct _THeap{
   int *data;
 }THeap;
 
-THeap * THeap_new(void);
-void    swap(int *arr, int i, int j){
+THeap * THeap_new(int capacity);
+void    swap(int *arr, int i, int j);
 void    free_THeap(THeap ** hptr);
 
 void    insert(THeap *h, int data);
@@ -27,10 +28,15 @@ void insert(THeap *h, int data){
 } 
 
 int removeMax(THeap *h){ 
-  if (h->size < 1) return -1;
+  if (h->size < 1) {
+    printf("Heap vacío.");
+    return -1;
+  }
   int tmp = h->data[1];
   h->data[1] = h->data[h->size--];
   topDownHeapify(h->data, 1, h->size);
+
+  return tmp;
 } 
 
 int getMax(THeap *h){ 
@@ -38,9 +44,7 @@ int getMax(THeap *h){
     printf("Heap vacío.\n");
     return 0;
   }
-  int max = 0;
-    max = h->data[1];
-  }
+  int max = h->data[1];
   return max;
 } 
 
@@ -56,7 +60,7 @@ void topDownHeapify(int * arr, int k, int n){
       if (j < n && arr[j] < arr[j+1]) j++;    // Si arr[j] < arr[j+1] < arr[j+2]
     }
     else{                                     // arr[j] > arr[j+1]
-      if (j+1 < n && arr[j] < arr[j+2] j += 2;// arr[j] > arr[j+1] y arr[j] < arr[j+2]
+      if (j+1 < n && arr[j] < arr[j+2]) j += 2;// arr[j] > arr[j+1] y arr[j] < arr[j+2]
     }                               
     // Si no se cumple lo anterior, hijo maximo esta en primer hijo
     if (arr[k]>= arr[j]) break;
@@ -68,8 +72,19 @@ void topDownHeapify(int * arr, int k, int n){
 THeap * THeap_new(int capacity){
   // Alocacion de memoria
   THeap *heap = (THeap *) calloc (1,sizeof(THeap));
+  if (heap == NULL) {
+    printf("No se alocó memoria para heap.\n");
+    exit(-1);
+  }
+
   heap->capacity = capacity;
-  heap->data = (int *) calloc (capacity, sizeof(int ));
+  heap->size = 0;
+  heap->data = (int *) calloc (capacity, sizeof(int));
+  if (heap->data == NULL) {
+    printf("No se alocó memoria para heap.\n");
+    exit(-1);
+    }
+
   return heap;
 }
 
@@ -82,6 +97,7 @@ void swap(int *arr, int i, int j){
 void free_THeap(THeap ** hptr){
   free((*hptr)->data);
   free(*hptr);
+  hptr = NULL;
 }
 
 #endif
