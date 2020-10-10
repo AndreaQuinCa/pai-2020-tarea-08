@@ -34,7 +34,13 @@ int removeMax(THeap *h){
 } 
 
 int getMax(THeap *h){ 
-  return -1;
+  int k = h->size;
+  int max = 0;
+  while (k>=1){
+    k = k/3;
+    max = h->data[k];
+  }
+  return max;
 } 
 
 void bottomUpHeapify(int *arr, int k){ 
