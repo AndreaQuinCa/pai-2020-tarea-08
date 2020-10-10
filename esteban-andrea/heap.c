@@ -28,14 +28,13 @@ void insert(THeap *h, int data){
 } 
 
 int removeMax(THeap *h){ 
-  if (h->size < 1) {
+  if (h->size == 0) {
     printf("Heap vacío.");
     return -1;
   }
-  int tmp = h->data[1];
-  h->data[1] = h->data[h->size--];
-  topDownHeapify(h->data, 1, h->size);
-
+  int tmp = h->data[0];
+  h->data[0] = h->data[h->size--];
+  topDownHeapify(h->data, 0, h->size);
   return tmp;
 } 
 
@@ -53,8 +52,8 @@ void bottomUpHeapify(int *arr, int k){
 } 
 
 void topDownHeapify(int * arr, int k, int n){ 
-  while (3*k <= n){
-    int j = 3*k;                              // Busco primer hijo
+  while (3*k < n){
+    int j = 3*k+1;                            // Busco primer hijo
     if (j < n && arr[j] < arr[j+1]) {         // Si arr[j] < arr[j+1] ...
       j++;
       if (j < n && arr[j] < arr[j+1]) j++;    // Si arr[j] < arr[j+1] < arr[j+2]
@@ -92,6 +91,12 @@ void swap(int *arr, int i, int j){
   int tmp = arr[i];
   arr[i] = arr[j];
   arr[j] = tmp;
+}
+
+void showHead(THeap *h){
+  for (int i = 0; i < h->size; i++){
+    printf("%i\n",h->data[i]);
+  }
 }
 
 void free_THeap(THeap ** hptr){
