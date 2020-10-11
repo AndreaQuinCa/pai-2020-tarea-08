@@ -5,9 +5,9 @@
 // Prototipos =================================================================
 
 typedef struct _THeap{
-  int capacity;
-  int size;
-  int *data;
+    int capacity; //capacidad máxima del arreglo
+    int size; //numero actual de datos
+    int* data; //arreglo
 }THeap;
 
 THeap * THeap_new(int capacity);
@@ -29,7 +29,7 @@ void insert(THeap *h, int data){
 
 int removeMax(THeap *h){ 
   if (h->size == 0) {
-    printf("Heap vacío.");
+    printf("Heap vacÃ­o.");
     return -1;
   }
   int tmp = h->data[0];
@@ -40,7 +40,7 @@ int removeMax(THeap *h){
 
 int getMax(THeap *h){ 
   if (h->size == 0){
-    printf("Heap vacío.\n");
+    printf("Heap vacÃ­o.\n");
     return 0;
   }
   int max = h->data[0];
@@ -72,7 +72,7 @@ THeap * THeap_new(int capacity){
   // Alocacion de memoria
   THeap *heap = (THeap *) calloc (1,sizeof(THeap));
   if (heap == NULL) {
-    printf("No se alocó memoria para heap.\n");
+    printf("No se alocÃ³ memoria para heap.\n");
     exit(-1);
   }
 
@@ -80,7 +80,7 @@ THeap * THeap_new(int capacity){
   heap->size = 0;
   heap->data = (int *) calloc (capacity, sizeof(int));
   if (heap->data == NULL) {
-    printf("No se alocó memoria para heap.\n");
+    printf("No se alocÃ³ memoria para heap.\n");
     exit(-1);
     }
 
