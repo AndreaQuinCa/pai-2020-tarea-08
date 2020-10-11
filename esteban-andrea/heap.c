@@ -43,7 +43,7 @@ int getMax(THeap *h){
     printf("Heap vacío.\n");
     return 0;
   }
-  int max = h->data[1];
+  int max = h->data[0];
   return max;
 } 
 
