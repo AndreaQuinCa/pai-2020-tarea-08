@@ -39,5 +39,5 @@ si<img src="https://latex.codecogs.com/gif.latex?d'<&space;m&space;<&space;y" ti
 Ahora tendremos una cantidad impar de datos pero como este nuevo dato es menor que la mediana, la nueva mediana debe ser la raíz de `th_max`, es decir, la nueva mediana es el máximo del montículo max.
 Si d'> m > x entonces este dato cooresponde a los datos más grandes,´por lo que se debe insertar en `th_min` y , de nuevo, como ahora los montículos tienen el mismo tamaño,
 solo se inserta en `th_min`. De nuevo, tendremos una cantidad impar de datos y como el nuevo dato es de la mitad más grande, la nueva mediana será la raíz de `th_min`, es decir, 
-el mínimo de `th_min`.
+el mínimo de `th_min`.  
 ### Pregunta 05
