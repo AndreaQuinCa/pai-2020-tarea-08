@@ -31,8 +31,7 @@ el promedio de las raíces.
 
 * Caso 2. <img src="https://latex.codecogs.com/gif.latex?n" title="n" /> es par. Sean <img src="https://latex.codecogs.com/gif.latex?x" title="x" /> y <img src="https://latex.codecogs.com/gif.latex?y" title="y" /> las raíces de `th_max` y `th_min`, entonces la mediana será  
 <img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac{x&plus;y}{2}" title="m = \frac{x+y}{2}" />.  
-Notemos que  <img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac{x&plus;y}{2}&space;<=&space;\frac{y&plus;y}{2}&space;=&space;y" title="m = \frac{x+y}{2} <= \frac{y+y}{2} = y" /> y 
-<img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac{x&plus;y}{2}&space;>=&space;\frac{x&plus;x}{2}&space;=&space;x" title="m = \frac{x+y}{2} >= \frac{x+x}{2} = x" />  
+Notemos que  <img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac{x&plus;y}{2}&space;<=&space;\frac{y&plus;y}{2}&space;=&space;y" title="m = \frac{x+y}{2} <= \frac{y+y}{2} = y" /> y <img src="https://latex.codecogs.com/gif.latex?m&space;=&space;\frac{x&plus;y}{2}&space;>=&space;\frac{x&plus;x}{2}&space;=&space;x" title="m = \frac{x+y}{2} >= \frac{x+x}{2} = x" />  
 entonces si <img src="https://latex.codecogs.com/gif.latex?x&space;\neq&space;y" title="x \neq y" />.  la mediana cumple con  
 <img src="https://latex.codecogs.com/gif.latex?x&space;<&space;m&space;<&space;y" title="x < m < y" />  
 si insertamos un nuevo dato <img src="https://latex.codecogs.com/gif.latex?d'" title="d'" />' entonces podrían pasar, de nuevo, dos cosas  
