@@ -14,8 +14,8 @@ la mediana en streaming se implementó en `median.c` de la carpeta `Esteban-Andr
 La idea fue utilizar un apuntador a funciones en las funciones ya implementadas de `heap.c` para ordenar los datos como lo pide el problema.
 
 ### Pregunta 04
-Demostrar que el algoritmo propuesto calcula bien el valor mediano.
-*Demostración*. Sea n el número actual de datos y {m} su mediana. Supongamos que se tiene un montículo `th_max` y `th_min` que guardan los elementos como se describe en el enunciado y supongamos que⋅⋅
+Demostrar que el algoritmo propuesto calcula bien el valor mediano.  
+**Demostración**. Sea n el número actual de datos y {m} su mediana. Supongamos que se tiene un montículo `th_max` y `th_min` que guardan los elementos como se describe en el enunciado y supongamos que⋅⋅
 
 <img src="https://latex.codecogs.com/gif.latex?|size(th\_mx)&space;-&space;size(th\_min)|&space;\leq&space;1" title="|size(th\_mx) - size(th\_min)| \leq 1" />
 
