@@ -1,19 +1,19 @@
-## Tarea 08
-### Implementación
+# Tarea 08
+## Implementación
 
-- Pregunta 01
+### Pregunta 01
 El montículo se implementó en `heap.c` de la carpeta `Esteban-Andrea` y las pruebas están en `specs.h`
 
-- Pregunta 02
+### Pregunta 02
 La complejidad de cada función se comentó en el código.
 
-- Aplicación 
+## Aplicación 
 
-- Pregunta 03
+### Pregunta 03
 la mediana en streaming se implementó en `median.c` de la carpeta `Esteban-Andrea` y las pruebas están en `specs.h`
 La idea fue utilizar un apuntador a funciones en las funciones ya implementadas de `heap.c` para ordenar los datos como lo pide el problema.
 
-- Pregunta 04
+### Pregunta 04
 Demostrar que el algoritmo propuesto calcula bien el valor mediano.
 *Demostración*. Sea n el número actual de datos y {m} su mediana. Supongamos que se tiene un montículo `th_max` y `th_min` que guardan los elementos como se describe en el enunciado y supongamos que⋅⋅
 
@@ -43,4 +43,4 @@ es decir, la nueva mediana es el máximo del montículo max.
 Si d'> m > x entonces este dato cooresponde a los datos más grandes,´por lo que se debe insertar en `th_min` y , de nuevo, como ahora los montículos tienen el mismo tamaño,
 solo se inserta en `th_min`. De nuevo, tendremos una cantidad impar de datos y como el nuevo dato es de la mitad más grande, la nueva mediana será la raíz de `th_min`, es decir, 
 el mínimo de `th_min`.
-- Pregunta 05
+### Pregunta 05
