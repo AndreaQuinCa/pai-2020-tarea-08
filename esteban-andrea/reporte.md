@@ -1,5 +1,10 @@
-= Tarea 08
-:toc:
+## Tarea 08
+### Subtítulo
+Este es un ejemplo de texto que da entrada a una lista genérica de elementos:
+
+- Elemento 1
+- Elemento 2
+- Elemento 3
 
 == Implementación 
 
